@@ -60,7 +60,7 @@ const desktopFlow = (e) => {
 };
 
 const mobileFlow = () => {
-  const cardRect = card.getBoundingClientRect();
+  const cardRect = document.body.getBoundingClientRect();
   const btnRect = noButton.getBoundingClientRect();
 
   // Calculate maximum movement area (keep button visible)
@@ -86,7 +86,7 @@ if (deviceType === "desktop") {
 } else {
   setInterval(() => {
     mobileFlow();
-  }, 100);
+  }, 250);
 }
 
 yesButton.addEventListener("click", () => {
