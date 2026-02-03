@@ -72,12 +72,11 @@ const mobileFlow = () => {
   const randomY = Math.random() * (maxY * 2) - maxY;
 
   // Apply movement with animation
-  noButton.style.transition = "transform 0.3s ease-out";
   noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
 
   // Optional: Random scale change sometimes
   if (Math.random() < 0.3) {
-    noButton.style.scale = (Math.random() * 0.4 + 0.8).toString();
+    noButton.style.scale = (Math.random() * 0.4 + 0.3).toString();
     yesButton.style.scale = (Math.random() * 1 + 1).toString();
   }
 };
@@ -87,7 +86,7 @@ if (deviceType === "desktop") {
 } else {
   setInterval(() => {
     mobileFlow();
-  }, 200);
+  }, 100);
 }
 
 yesButton.addEventListener("click", () => {
